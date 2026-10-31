@@ -3,9 +3,9 @@
  */
 'use strict';
 
-// عکس غذا: assets/img/dishes/dish-01.jpg تا dish-25.jpg (اگر فایل نباشد، جای‌نگهدار نمایش داده می‌شود)
+// عکس غذا: dish-01.jpg تا dish-25.jpg (اگر فایل نباشد، جای‌نگهدار نمایش داده می‌شود)
 const img = i =>
-  `<span class="ph" style="--c:${menu[i][6]}"><img loading="lazy" src="${photos[i] || `assets/img/dishes/dish-${String(i + 1).padStart(2, '0')}.jpg`}" alt="${menu[i][0]}" onerror="this.onerror=null;window.dishArtFor?this.src=window.dishArtFor(${i}):this.remove()"></span>`;
+  `<span class="ph" style="--c:${menu[i][6]}"><img loading="lazy" src="${photos[i] || `dish-${String(i + 1).padStart(2, '0')}.jpg`}" alt="${menu[i][0]}" onerror="this.onerror=null;window.dishArtFor?this.src=window.dishArtFor(${i}):this.remove()"></span>`;
 const ctl = i =>
   cart[i]
     ? `<span class="step"><button data-act="add" data-i="${i}" data-d="-1" aria-label="کم کردن">−</button><b>${fa(cart[i])}</b><button data-act="add" data-i="${i}" data-d="1" aria-label="زیاد کردن">+</button></span>`

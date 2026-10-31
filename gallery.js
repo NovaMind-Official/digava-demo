@@ -36,7 +36,7 @@ const gTile = (g, k) => {
   const inner =
     g.t === 'food'
       ? sImg(g.i)
-      : `<img alt="" src="assets/img/gallery/${g.t}-${g.n}.jpg" onerror="this.onerror=null;this.outerHTML='<span class=\\'ph3\\' style=\\'--c:${g.cl}\\'>${g.c}</span>'">`;
+      : `<img alt="" src="${g.t}-${g.n}.jpg" onerror="this.onerror=null;this.outerHTML='<span class=\\'ph3\\' style=\\'--c:${g.cl}\\'>${g.c}</span>'">`;
   return `<button type="button" class="gt ${sz}" data-act="gal" data-k="${k}" data-t="${g.t}" data-cap="${g.c}" aria-label="${g.c}">${inner}</button>`;
 };
 const galView = f => {
@@ -51,7 +51,7 @@ const lbShow = k => {
   d.querySelector('.st').innerHTML =
     (g.t === 'food'
       ? sImg(g.i)
-      : `<img alt="" src="assets/img/gallery/${g.t}-${g.n}.jpg" onerror="this.onerror=null;this.outerHTML='<span class=\\'ph3\\' style=\\'--c:${g.cl}\\'>${g.c}</span>'">`) +
+      : `<img alt="" src="${g.t}-${g.n}.jpg" onerror="this.onerror=null;this.outerHTML='<span class=\\'ph3\\' style=\\'--c:${g.cl}\\'>${g.c}</span>'">`) +
     `<div class="cap">${g.c}</div>`;
 };
 (() => {

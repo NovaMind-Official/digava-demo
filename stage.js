@@ -19,7 +19,7 @@ const stgPick = () => {
 let STG = [],
   stgF = -1;
 const sImg = i =>
-  `<img alt="" src="${photos[i] || `assets/img/dishes/dish-${String(i + 1).padStart(2, '0')}.jpg`}" onerror="this.onerror=null;window.dishArtFor?this.src=window.dishArtFor(${i}):this.remove()">`;
+  `<img alt="" src="${photos[i] || `dish-${String(i + 1).padStart(2, '0')}.jpg`}" onerror="this.onerror=null;window.dishArtFor?this.src=window.dishArtFor(${i}):this.remove()">`;
 const stage = M2 => {
   STG = stgPick();
   const n = STG.length + 1;

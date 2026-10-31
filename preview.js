@@ -4,7 +4,7 @@
 'use strict';
 
 const mpv = { i: -1, hover: false, raf: 0 };
-const mpvSrc = i => photos[i] || `assets/img/dishes/dish-${String(i + 1).padStart(2, '0')}.jpg`;
+const mpvSrc = i => photos[i] || `dish-${String(i + 1).padStart(2, '0')}.jpg`;
 const mpvHtml = () =>
   `<aside class="mpv" id="mpv" aria-live="polite"><div class="mpv-img"><img class="on" alt=""><img alt=""></div><div class="mpv-cap"><p class="k"></p><h3></h3><p class="d"></p><div class="r"><b class="p"></b><span data-ci="0"></span></div></div></aside>`;
 const mpvSet = i => {
