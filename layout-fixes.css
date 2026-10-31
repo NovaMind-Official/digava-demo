@@ -1,0 +1,92 @@
+/* اصلاح‌های چیدمان */
+
+html {
+  overflow-x: clip;
+}
+.sb {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.sb::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .sb .sh {
+    height: 1px;
+    margin: 0.45rem 0.7rem;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0;
+    background: var(--mist);
+    opacity: 1;
+  }
+  .sb:hover .sh,
+  body.sb-pin .sb .sh {
+    height: auto;
+    margin: 0.9rem 0.8rem 0.2rem;
+    font-size: 0.75rem;
+    background: none;
+  }
+  .sb a,
+  .sl {
+    padding: 0.2rem 0.6rem;
+  }
+  .ico {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.pl.sr .bub {
+  left: auto;
+  right: 0;
+  translate: 0 8px;
+}
+.pl.sl2 .bub {
+  left: 0;
+  translate: 0 8px;
+}
+.pl.sr:hover .bub,
+.pl.sr:focus-within .bub,
+.pl.sl2:hover .bub,
+.pl.sl2:focus-within .bub {
+  translate: 0 0;
+}
+.pl {
+  transform: rotate(var(--a)) translateY(-138%) rotate(calc(var(--a) * -1));
+}
+.chef .two > div:last-child {
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+}
+.combos {
+  grid-template-columns: repeat(auto-fit, minmax(min(26rem, 100%), 1fr));
+}
+.buy2 {
+  flex-wrap: wrap;
+}
+.buy2 .btn,
+.tot {
+  white-space: nowrap;
+}
+.slots button:disabled {
+  text-decoration: none;
+}
+.slots button:disabled b {
+  text-decoration: line-through;
+}
+.days button {
+  width: 4.4rem;
+  font-size: 0.8rem;
+}
+.stats b {
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+.card .pr b {
+  white-space: nowrap;
+}
+.card .pr {
+  flex-wrap: wrap;
+}

@@ -1,0 +1,305 @@
+/* پوسته‌ی «آتلیه»: تیره، تایپوگرافی‌محور، یک رنگ زعفرانی */
+
+html:root[data-skin='atelier'],
+html:root[data-skin='atelier'] .dash {
+  --paper: #0a0908;
+  --alt: #131110;
+  --ink: #f1ece2;
+  --muted: #8a8377;
+  --mist: rgba(241, 236, 226, 0.12);
+  --field: #0f0d0c;
+  --acc: #d9a23f;
+  --star: #d9a23f;
+  --tq: #d9a23f;
+  --on: #140d00;
+  --r1: 10px;
+  --r2: 16px;
+  --r3: 22px;
+  color-scheme: dark;
+}
+html:root[data-skin='atelier'] body {
+  background: var(--paper);
+}
+
+/* سربرگ و ناوبری: تخت و باریک، با خط مویی */
+html:root[data-skin='atelier'] .top {
+  top: 0;
+  inset-inline: 0;
+  height: calc(3.6rem + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-inline: 1rem;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid var(--mist);
+  background: color-mix(in srgb, var(--paper) 72%, transparent);
+  box-shadow: none;
+}
+html:root[data-skin='atelier'] .top::after {
+  inset-inline: 0;
+  bottom: -1px;
+  height: 1px;
+  border-radius: 0;
+}
+html:root[data-skin='atelier'] .brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+html:root[data-skin='atelier'] .mb,
+html:root[data-skin='atelier'] .top .icon,
+html:root[data-skin='atelier'] .gs {
+  border-radius: var(--r1);
+  background: transparent;
+  border: 1px solid var(--mist);
+}
+html:root[data-skin='atelier'] .av {
+  border-radius: 50%;
+  background: var(--acc);
+}
+html:root[data-skin='atelier'] main {
+  padding-top: calc(5.2rem + env(safe-area-inset-top, 0px));
+}
+@media (max-width: 1099px) {
+  html:root[data-skin='atelier'] .bn {
+    inset-inline: 0;
+    bottom: 0;
+    padding: 0.3rem 0.4rem calc(0.3rem + env(safe-area-inset-bottom, 0px));
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid var(--mist);
+    box-shadow: none;
+    background: color-mix(in srgb, var(--paper) 80%, transparent);
+  }
+  html:root[data-skin='atelier'] .bn a,
+  html:root[data-skin='atelier'] .bn button {
+    border-radius: 0;
+  }
+  html:root[data-skin='atelier'] .bn [aria-current] {
+    background: none;
+    color: var(--acc);
+  }
+  html:root[data-skin='atelier'] .bn [aria-current]::before {
+    content: '';
+    position: absolute;
+    top: -0.3rem;
+    width: 1.6rem;
+    height: 2px;
+    background: var(--acc);
+  }
+}
+
+/* تیترها: درشت، فشرده، بدون تزئین */
+html:root[data-skin='atelier'] h1,
+html:root[data-skin='atelier'] .pt {
+  font-weight: 800;
+  line-height: 1.15;
+  font-size: clamp(2.4rem, 8vw, 4.6rem);
+}
+html:root[data-skin='atelier'] h2 {
+  font-weight: 800;
+  line-height: 1.25;
+}
+html:root[data-skin='atelier'] h2::before,
+html:root[data-skin='atelier'] h1::before {
+  content: none;
+}
+
+/* دکمه‌ها: گوشه‌ی کم‌گرد، رنگ تخت */
+html:root[data-skin='atelier'] .btn {
+  border-radius: var(--r1);
+  background: var(--acc);
+  color: var(--on);
+  box-shadow: none;
+  font-weight: 700;
+}
+html:root[data-skin='atelier'] .btn::after {
+  content: none;
+}
+html:root[data-skin='atelier'] .btn.ghost,
+html:root[data-skin='atelier'] .btn.sm.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--mist);
+}
+html:root[data-skin='atelier'] .btn:hover {
+  filter: brightness(1.08);
+}
+
+/* بخش منو: بدون پنل رنگی بزرگ */
+html:root[data-skin='atelier'] .dash {
+  margin-inline: 0;
+  border-radius: 0;
+  background: transparent;
+}
+html:root[data-skin='atelier'] .seg,
+html:root[data-skin='atelier'] .fbtn,
+html:root[data-skin='atelier'] #q,
+html:root[data-skin='atelier'] #sort {
+  border-radius: var(--r2);
+  background: transparent;
+  border: 1px solid var(--mist);
+}
+html:root[data-skin='atelier'] .seg button {
+  border-radius: var(--r1);
+}
+html:root[data-skin='atelier'] .seg button[aria-pressed='true'] {
+  background: var(--acc);
+  color: var(--on);
+}
+
+/* کارت‌ها: عکس تخت با شماره، بدون جعبه */
+html:root[data-skin='atelier'] .card {
+  padding: 0.5rem;
+  border: 1px solid var(--mist);
+  border-radius: var(--r3);
+  background: var(--card);
+  box-shadow: 0 18px 40px -28px rgba(0, 0, 0, 0.9);
+  counter-increment: dish;
+}
+html:root[data-skin='atelier'] .card::before,
+html:root[data-skin='atelier'] .card::after {
+  content: none;
+}
+html:root[data-skin='atelier'] .card .cm,
+html:root[data-skin='atelier'] .card .ph {
+  border-radius: var(--r2);
+}
+html:root[data-skin='atelier'] .card .ph img {
+  transition: transform 1.1s var(--ease-out, ease);
+}
+html:root[data-skin='atelier'] .card:hover .ph img {
+  transform: scale(1.045);
+}
+html:root[data-skin='atelier'] .card .cm::before {
+  content: counter(dish, persian);
+  position: absolute;
+  z-index: 3;
+  inset-block-end: 0.55rem;
+  inset-inline-start: 0.7rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #fff;
+  mix-blend-mode: difference;
+  letter-spacing: 0.1em;
+}
+html:root[data-skin='atelier'] .card .cm::after {
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(217, 162, 63, 0.22),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+html:root[data-skin='atelier'] .card:hover .cm::after {
+  opacity: 1;
+}
+html:root[data-skin='atelier'] .card .cb {
+  padding: 0.8rem 0.45rem 0.4rem;
+  border-top: 0;
+}
+html:root[data-skin='atelier'] .card .cb h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+html:root[data-skin='atelier'] .card .cb p {
+  color: var(--muted);
+}
+html:root[data-skin='atelier'] .card .meta2 span,
+html:root[data-skin='atelier'] .card .optl {
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--mist);
+}
+html:root[data-skin='atelier'] .card .bdg {
+  border-radius: 8px;
+  background: var(--acc);
+  color: var(--on);
+}
+html:root[data-skin='atelier'] .card [data-ci] .btn,
+html:root[data-skin='atelier'] .card .btn {
+  border-radius: 50%;
+}
+html:root[data-skin='atelier'] .card .pr b {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+/* صحنه‌ی اصلی: نور گرم آرام، بدون تزئین اضافه */
+html:root[data-skin='atelier'] .stg .bgl {
+  background: radial-gradient(
+    ellipse at 70% 30%,
+    color-mix(in srgb, var(--t) 38%, transparent),
+    transparent 62%
+  ),
+  var(--paper);
+}
+html:root[data-skin='atelier'] .stg .k {
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+/* کادرها و پنجره‌ها */
+html:root[data-skin='atelier'] .panel,
+html:root[data-skin='atelier'] .pop,
+html:root[data-skin='atelier'] .mega .mg,
+html:root[data-skin='atelier'] dialog,
+html:root[data-skin='atelier'] .sb {
+  border-radius: var(--r3);
+}
+html:root[data-skin='atelier'] .chip,
+html:root[data-skin='atelier'] .opt {
+  border-radius: var(--r1);
+}
+html:root[data-skin='atelier'] .foot {
+  border-radius: 0;
+  border-top: 1px solid var(--mist);
+  background: var(--paper);
+}
+
+/* قاب‌های قوسی به قاب‌های ساده تبدیل می‌شوند و نقش‌های تزئینی حذف می‌شوند */
+html:root[data-skin='atelier'] {
+  --pat: none;
+}
+html:root[data-skin='atelier'] .archwin,
+html:root[data-skin='atelier'] .aw-in,
+html:root[data-skin='atelier'] .booth,
+html:root[data-skin='atelier'] .arch {
+  border-radius: var(--r3);
+}
+html:root[data-skin='atelier'] .archwin {
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+html:root[data-skin='atelier'] .arch {
+  box-shadow: none;
+}
+html:root[data-skin='atelier'] .fbtn {
+  color: var(--ink);
+}
+html:root[data-skin='atelier'] .sbuy,
+html:root[data-skin='atelier'] .buybar {
+  border-radius: var(--r2);
+}
+html:root[data-skin='atelier'] .stage {
+  border-radius: var(--r3);
+  padding-top: 0;
+  box-shadow: none;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 45%, #000), #070605);
+}
+html:root[data-skin='atelier'] .sl .ico i,
+html:root[data-skin='atelier'] .mgc i {
+  filter: grayscale(1) brightness(1.3);
+}
+html:root[data-skin='atelier'] .mr-add .btn {
+  border-radius: 50%;
+}
+html:root[data-skin='atelier'] .mrow:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+html:root[data-skin='atelier'] .mpv-cap [data-ci] .btn {
+  border-radius: 50%;
+}
+html:root[data-skin='atelier'] .mpv {
+  border-radius: var(--r3);
+}

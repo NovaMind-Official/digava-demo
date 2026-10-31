@@ -1,0 +1,124 @@
+/* نرمی حرکت، حالت‌های لمس و جزئیات پایانی */
+
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  min-height: 62vh;
+  min-height: 62svh;
+}
+button,
+a,
+summary,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+button,
+.btn,
+.chip,
+[data-act] {
+  transition:
+    transform 0.35s var(--ease-out),
+    color 0.3s,
+    background-color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.4s var(--ease-out),
+    opacity 0.3s;
+}
+button:active,
+.btn:active {
+  transform: scale(0.97);
+  transition-duration: 0.12s;
+}
+:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+img {
+  image-rendering: auto;
+}
+.card {
+  transition:
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out),
+    border-color 0.3s;
+}
+.panel,
+.card,
+.combo {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+.top {
+  transition:
+    background-color 0.4s,
+    box-shadow 0.4s,
+    transform 0.5s var(--ease-out);
+}
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  text-align: center;
+  padding: 3.5rem 1rem 2rem;
+}
+.empty svg {
+  width: 3.4rem;
+  height: 3.4rem;
+  color: var(--acc);
+  opacity: 0.9;
+}
+.empty h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.empty p {
+  margin: 0;
+  max-width: 24rem;
+}
+input[type='date'],
+input[type='time'] {
+  min-height: 3rem;
+  text-align: start;
+  font-family: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.lock,
+html.lock body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+@media (hover: hover) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+.sb,
+.dr,
+.mega,
+.pop,
+dialog {
+  overscroll-behavior: contain;
+}

@@ -1,0 +1,214 @@
+/* تم‌ها و پوسته‌ها */
+
+.skp {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0 0.4rem 0.8rem;
+}
+.skp button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem 0.3rem 1rem;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: start;
+}
+.skp button[aria-pressed='true'] {
+  background: var(--alt);
+  font-weight: 700;
+}
+.skp i {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  border: 2px solid var(--mist);
+  flex: none;
+}
+html:root[data-skin='noir'] {
+  --paper: #08080b;
+  --alt: #121218;
+  --ink: #f2eee6;
+  --muted: #9a968d;
+  --mist: #26262e;
+  --field: #0e0e13;
+  --acc: #d9b26b;
+  --star: #d9b26b;
+  --tq: #d9b26b;
+  --on: #150f02;
+  color-scheme: dark;
+  --f-disp: 'Vazirmatn', sans-serif;
+  --f-serif: 'Vazirmatn', sans-serif;
+  --f-cal: 'Vazirmatn', sans-serif;
+}
+html:root[data-skin='noir'] .dash {
+  --paper: #050507;
+  --alt: #101015;
+  --field: #0c0c10;
+  --mist: #26262e;
+  --ink: #f2eee6;
+  --muted: #9a968d;
+  --acc: #d9b26b;
+  --star: #d9b26b;
+}
+html:root[data-skin='noir'] .top,
+html:root[data-skin='noir'] .card,
+html:root[data-skin='noir'] .panel {
+  border-radius: 6px;
+}
+html:root[data-skin='noir'] .btn {
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+html:root[data-skin='noir'] .card {
+  border: 1px solid var(--mist);
+}
+html:root[data-skin='noir'] .pt,
+html:root[data-skin='noir'] h1,
+html:root[data-skin='noir'] h2 {
+  letter-spacing: -0.01em;
+}
+html:root[data-skin='cafe'] {
+  --paper: #f8f0e4;
+  --alt: #efe2cf;
+  --ink: #33231a;
+  --muted: #7b6552;
+  --mist: #e0cdb3;
+  --field: #fffaf2;
+  --acc: #b5532b;
+  --star: #b5532b;
+  --tq: #7a8f5a;
+  --on: #fff;
+  --f-disp: 'Vazirmatn', sans-serif;
+  --f-bold: 'Vazirmatn', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  html:root[data-skin='cafe']:not([data-theme='light']) {
+    --paper: #1d1510;
+    --alt: #2a1e16;
+    --ink: #f6ebdd;
+    --muted: #b49c84;
+    --mist: #3d2d21;
+    --field: #251a13;
+    --acc: #e58a5b;
+    --star: #e58a5b;
+    --tq: #a3b77f;
+    --on: #1d0d04;
+    color-scheme: dark;
+  }
+}
+html:root[data-skin='cafe'][data-theme='dark'] {
+  --paper: #1d1510;
+  --alt: #2a1e16;
+  --ink: #f6ebdd;
+  --muted: #b49c84;
+  --mist: #3d2d21;
+  --field: #251a13;
+  --acc: #e58a5b;
+  --star: #e58a5b;
+  --tq: #a3b77f;
+  --on: #1d0d04;
+  color-scheme: dark;
+}
+html:root[data-skin='cafe'] .dash {
+  --paper: #2a1e16;
+  --ink: #f6ebdd;
+  --muted: #b49c84;
+  --mist: #4a3626;
+  --field: #33241a;
+  --alt: #3b2a1e;
+  --acc: #e58a5b;
+  --star: #e58a5b;
+}
+html:root[data-skin='cafe'] .card,
+html:root[data-skin='cafe'] .panel,
+html:root[data-skin='cafe'] .dash {
+  border-radius: 28px;
+}
+html:root[data-skin='cafe'] .btn {
+  border-radius: 99px;
+}
+html:root[data-skin='street'] {
+  --paper: #f3f1ea;
+  --alt: #e6e3d8;
+  --ink: #111;
+  --muted: #555;
+  --mist: #111;
+  --field: #fff;
+  --acc: #ff3b1f;
+  --star: #ff3b1f;
+  --tq: #111;
+  --on: #fff;
+  --f-disp: 'Vazirmatn', sans-serif;
+  --f-serif: 'Vazirmatn', sans-serif;
+  --f-cal: 'Vazirmatn', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  html:root[data-skin='street']:not([data-theme='light']) {
+    --paper: #0c0c0c;
+    --alt: #171717;
+    --ink: #f5f5f0;
+    --muted: #a5a5a0;
+    --mist: #3a3a3a;
+    --field: #141414;
+    --acc: #ffd60a;
+    --star: #ffd60a;
+    --tq: #ffd60a;
+    --on: #111;
+    color-scheme: dark;
+  }
+}
+html:root[data-skin='street'][data-theme='dark'] {
+  --paper: #0c0c0c;
+  --alt: #171717;
+  --ink: #f5f5f0;
+  --muted: #a5a5a0;
+  --mist: #3a3a3a;
+  --field: #141414;
+  --acc: #ffd60a;
+  --star: #ffd60a;
+  --tq: #ffd60a;
+  --on: #111;
+  color-scheme: dark;
+}
+html:root[data-skin='street'] .dash {
+  --paper: #0c0c0c;
+  --ink: #f5f5f0;
+  --mist: #3a3a3a;
+  --acc: #ffd60a;
+  --star: #ffd60a;
+  --field: #141414;
+  --alt: #171717;
+}
+html:root[data-skin='street'] .card,
+html:root[data-skin='street'] .panel,
+html:root[data-skin='street'] .btn,
+html:root[data-skin='street'] .top,
+html:root[data-skin='street'] .dash,
+html:root[data-skin='street'] .chip,
+html:root[data-skin='street'] .tag {
+  border-radius: 3px !important;
+}
+html:root[data-skin='street'] .card,
+html:root[data-skin='street'] .panel,
+html:root[data-skin='street'] .btn,
+html:root[data-skin='street'] .top {
+  border: 2px solid var(--ink) !important;
+}
+html:root[data-skin='street'] .card {
+  box-shadow: 5px 5px 0 var(--ink);
+}
+html:root[data-skin='street'] .btn {
+  box-shadow: 3px 3px 0 var(--ink);
+}
+html:root[data-skin='street'] .pt,
+html:root[data-skin='street'] h1,
+html:root[data-skin='street'] h2 {
+  text-transform: none;
+  letter-spacing: 0;
+}

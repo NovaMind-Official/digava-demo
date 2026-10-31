@@ -1,0 +1,412 @@
+/* هویت بصری: الگوها، فونت‌ها و هیرو */
+
+:root {
+  --pat: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.2' stroke-width='1.2'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  --star8: polygon(
+    50% 0,
+    61% 22%,
+    85% 15%,
+    78% 39%,
+    100% 50%,
+    78% 61%,
+    85% 85%,
+    61% 78%,
+    50% 100%,
+    39% 78%,
+    15% 85%,
+    22% 61%,
+    0 50%,
+    22% 39%,
+    15% 15%,
+    39% 22%
+  );
+  --f-disp: 'Markazi Text', 'Vazirmatn', serif;
+  --f-serif: 'Vazirmatn', sans-serif;
+  --f-cal: 'Vazirmatn', sans-serif;
+  --f-bold: 'Vazirmatn', sans-serif;
+  --f-ui: 'Vazirmatn', sans-serif;
+  --f-kufi: 'Vazirmatn', sans-serif;
+  --f-body: 'Vazirmatn', sans-serif;
+}
+body {
+  font-family: var(--f-body);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--f-disp);
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.25em;
+}
+.brand {
+  font-family: var(--f-cal);
+  font-weight: 700;
+}
+.icon,
+.btn,
+.tabs button,
+.opt,
+.mt,
+.bn a,
+.bn button,
+.sh,
+.tag,
+.trust span,
+.meta2,
+.back,
+.ic,
+.seg button,
+.fbtn,
+.sb a,
+.sl,
+.pop button,
+.days button,
+.slots button,
+.gs,
+.cr b {
+  font-family: var(--f-ui);
+}
+.chip,
+kbd,
+.st,
+.mono,
+.arch span,
+.gd,
+.fl,
+.nav2,
+.bd {
+  font-family: var(--f-kufi);
+}
+.pp,
+.cb .pr b,
+.card .pr b,
+.tot,
+.facts dt,
+.avg b,
+.stats b,
+.mini b,
+.pn1 + .pr2 b {
+  font-family: var(--f-bold);
+  font-weight: 400;
+}
+.lead,
+.desc2,
+blockquote p,
+.about p,
+.cb p {
+  font-family: var(--f-serif);
+}
+.pt {
+  font-family: var(--f-disp);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.1;
+}
+h2 {
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  line-height: 1.2;
+}
+h2::before {
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+  background: var(--acc);
+  clip-path: var(--star8);
+  animation: spin 14s linear infinite;
+}
+h2::after {
+  content: '';
+  flex: 1;
+  width: auto;
+  height: 1px;
+  margin: 0;
+  border-radius: 0;
+  background: linear-gradient(to left, var(--acc), transparent);
+}
+.dash {
+  --paper: #05201f;
+  --ink: #e8f4f1;
+  --muted: #8db0ab;
+  --mist: #12403f;
+  --field: #0a2e2d;
+  --alt: #0f3736;
+  --acc: #f2b134;
+  --star: #f2b134;
+}
+.ph {
+  background-image:
+    var(--pat), radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--c) 55%, #fff), transparent 55%),
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--c) 65%, var(--tq)),
+      color-mix(in srgb, var(--c) 35%, #031819)
+    );
+  background-size:
+    64px 64px,
+    auto,
+    auto;
+}
+.card {
+  border-radius: 28px;
+}
+.card .ph {
+  outline: none;
+  box-shadow:
+    0 0 0 4px var(--field),
+    0 0 0 6px var(--acc),
+    0 18px 28px -10px rgba(0, 0, 0, 0.5);
+}
+.card .pr b {
+  font-size: 1.25rem;
+}
+
+/* قهرمان با طاق */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: center;
+  text-align: start;
+  padding: 3rem 5vw 3.5rem;
+  min-height: calc(100vh - 6rem);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--pat);
+  background-size: 64px 64px;
+  filter: invert(0.5);
+  opacity: 0.35;
+  animation: pan 80s linear infinite;
+  -webkit-mask-image: radial-gradient(70% 70% at 70% 40%, #000, transparent);
+  mask-image: radial-gradient(70% 70% at 70% 40%, #000, transparent);
+}
+@keyframes pan {
+  to {
+    background-position: 640px 320px;
+  }
+}
+.hero h1 {
+  font-size: clamp(3rem, 8.5vw, 7.4rem);
+  line-height: 1.08;
+}
+.split .acc {
+  font-family: var(--f-cal);
+  color: var(--acc);
+  font-weight: 700;
+}
+.lead {
+  margin: 1.2rem 0;
+  max-width: 36rem;
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+}
+.links {
+  justify-content: flex-start;
+}
+.archwin {
+  position: relative;
+  justify-self: center;
+  width: min(24rem, 84%);
+  aspect-ratio: 3/4.3;
+  border-radius: 999px 999px 30px 30px;
+  padding: 0.7rem;
+  background: linear-gradient(160deg, #ffd97a, var(--acc) 45%, #8f6619);
+  box-shadow: 0 50px 80px -30px rgba(0, 0, 0, 0.6);
+  animation: vin 1s 0.3s var(--e) both;
+}
+.aw-in {
+  position: relative;
+  height: 100%;
+  border-radius: 999px 999px 22px 22px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background-image:
+    var(--pat), radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--tq) 75%, #fff), transparent 60%),
+    linear-gradient(170deg, var(--tq), #052b2c);
+  background-size:
+    64px 64px,
+    auto,
+    auto;
+}
+.aw-in img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aw-in img + svg {
+  display: none;
+}
+.aw-in svg {
+  width: 58%;
+  color: rgba(255, 255, 255, 0.88);
+  animation: spin 50s linear infinite;
+}
+.aw-cap {
+  position: absolute;
+  bottom: 1.4rem;
+  inset-inline: 1.6rem;
+  display: grid;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #0a2b2d;
+  backdrop-filter: blur(10px);
+  line-height: 1.5;
+}
+.aw-cap span {
+  font-size: 0.85rem;
+  color: #4f6d6c;
+}
+.mq {
+  background: var(--alt);
+  border-block: 0;
+}
+.mq span {
+  font-family: var(--f-cal);
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+.mq span::after {
+  font-family: var(--f-body);
+}
+
+/* طاق دسته‌ها */
+.arches {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1.2rem 0.3rem 1.6rem;
+}
+.arch {
+  position: relative;
+  flex: 0 0 11rem;
+  height: 15.5rem;
+  scroll-snap-align: start;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font: inherit;
+  text-align: center;
+  border-radius: 999px 999px 26px 26px;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  padding-bottom: 1.5rem;
+  background-image: var(--pat), linear-gradient(170deg, var(--c), color-mix(in srgb, var(--c) 40%, #031819));
+  background-size:
+    64px 64px,
+    auto;
+  box-shadow:
+    inset 0 0 0 5px var(--acc),
+    inset 0 0 0 7px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.5s var(--e),
+    background-position 1s var(--e);
+}
+.arch::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  inset-inline: 0;
+  margin-inline: auto;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--acc);
+  clip-path: var(--star8);
+  transition: transform 0.8s var(--e);
+}
+.arch:hover {
+  transform: translateY(-10px);
+  background-position:
+    32px 32px,
+    0 0;
+}
+.arch:hover::before {
+  transform: rotate(180deg) scale(1.15);
+}
+.arch b {
+  font-family: var(--f-disp);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  padding-inline: 0.8rem;
+}
+.arch span {
+  opacity: 0.85;
+  font-size: 0.8rem;
+}
+.feat b {
+  font-family: var(--f-disp);
+  font-size: 1.6rem;
+}
+
+/* صحنه‌ی محصول به شکل طاق */
+.stage {
+  border-radius: 999px 999px 40px 40px;
+  padding-top: 4rem;
+  background-image: var(--pat), linear-gradient(170deg, color-mix(in srgb, var(--c) 55%, var(--tq)), #031819);
+  background-size:
+    64px 64px,
+    auto;
+  box-shadow:
+    inset 0 0 0 6px var(--acc),
+    inset 0 0 0 8px rgba(0, 0, 0, 0.25);
+}
+.f1 {
+  top: 26%;
+}
+.f2 {
+  top: 52%;
+}
+.f3 {
+  bottom: 12%;
+}
+.pn1 {
+  font-family: var(--f-disp);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+}
+
+/* پاورقی با قوس‌ها */
+.foot {
+  position: relative;
+  margin-top: 2.4rem;
+  padding-top: 3.6rem;
+}
+.foot::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  top: -1px;
+  height: 1.6rem;
+  background: radial-gradient(circle at 50% 100%, var(--paper) 0 0.8rem, transparent 0.85rem) 0 0/2.4rem
+    1.6rem repeat-x;
+}
+.foot .brand {
+  font-size: 1.8rem;
+}
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding-top: 2rem;
+  }
+  .archwin {
+    width: min(17rem, 74%);
+  }
+  .arch {
+    flex-basis: 9.5rem;
+    height: 13.5rem;
+  }
+}

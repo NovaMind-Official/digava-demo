@@ -1,0 +1,306 @@
+/* صحنه‌ی سینمایی صفحه‌ی اصلی */
+
+.stg {
+  --n: 6;
+  position: relative;
+  margin-top: -5.4rem;
+  height: calc(100svh + (var(--n) - 1) * 78svh);
+  background: #07090a;
+  color: #f4efe6;
+  margin-bottom: 0;
+}
+.stg-in {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+.stg .bgl {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 0;
+  transition: opacity 0.9s;
+  background: radial-gradient(75% 60% at 50% 42%, color-mix(in srgb, var(--t) 62%, #07090a), #07090a 78%);
+}
+.stg .bgl.on {
+  opacity: 1;
+}
+.stg-in::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: var(--pat);
+  background-size: 64px 64px;
+  opacity: 0.5;
+  mask: radial-gradient(70% 60% at 50% 45%, #000, transparent);
+}
+.stg-in::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 34%;
+  z-index: -1;
+  background: linear-gradient(transparent, #07090a 88%);
+}
+.stg .gn {
+  position: absolute;
+  inset-inline: 0;
+  top: 23%;
+  height: 1px;
+  z-index: -1;
+}
+.stg .gn span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  white-space: nowrap;
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: clamp(7rem, 38vw, 24rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.2px color-mix(in srgb, var(--acc) 55%, transparent);
+  opacity: 0;
+  transition: opacity 0.7s;
+  will-change: transform;
+}
+.stg .gn span.on {
+  opacity: 1;
+}
+.stg .pl {
+  position: absolute;
+  top: 33%;
+  inset-inline-start: 50%;
+  width: min(72vw, 36svh);
+  aspect-ratio: 1;
+  margin-inline-start: calc(min(72vw, 36svh) / -2);
+  margin-top: calc(min(72vw, 36svh) / -2);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 6px rgba(255, 255, 255, 0.04);
+  will-change: transform, opacity;
+  transition: opacity 0.6s;
+}
+.stg .pl img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scale: 1.28;
+  display: block;
+}
+.stg .pl .sh {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.2), transparent 42%);
+}
+.stg .tx {
+  position: absolute;
+  inset-inline: 1.4rem;
+  bottom: calc(5.6rem + env(safe-area-inset-bottom, 0px));
+  display: grid;
+  gap: 0.45rem;
+  opacity: 0;
+  translate: 0 24px;
+  transition:
+    opacity 0.55s,
+    translate 0.7s var(--e);
+  pointer-events: none;
+  text-align: start;
+}
+.stg .tx.on {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+.stg .tx .k {
+  font-family: var(--f-kufi);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--acc);
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.stg .tx .k::before {
+  content: '';
+  width: 1.8rem;
+  height: 1px;
+  background: currentColor;
+}
+.stg .tx h1,
+.stg .tx h2 {
+  font-size: clamp(2.3rem, 8vw, 5.4rem);
+  line-height: 1.08;
+  margin: 0;
+  color: #f8f3ea;
+  font-weight: 700;
+}
+.stg .tx h1 .acc {
+  color: var(--acc);
+  font-family: var(--f-cal);
+}
+.stg .tx p {
+  color: rgba(244, 239, 230, 0.72);
+  max-width: 34rem;
+  margin: 0;
+  font-size: 0.98rem;
+}
+.stg .tx .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+.stg .tx .pp2 {
+  font-family: var(--f-bold);
+  font-size: 1.5rem;
+  color: var(--acc);
+}
+.stg .tx .pp2 small {
+  font-size: 0.7rem;
+  color: rgba(244, 239, 230, 0.6);
+  margin-inline-start: 0.3rem;
+}
+.stg .tx .btn.ghost {
+  color: #f4efe6;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.stg .rl {
+  position: absolute;
+  inset-inline-end: 0.9rem;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  gap: 0.7rem;
+  z-index: 3;
+}
+.stg .rl button {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.stg .rl button::after {
+  content: '';
+  position: absolute;
+  inset: -0.7rem;
+}
+.stg .rl button.on {
+  background: var(--acc);
+  scale: 1.7;
+}
+.stg .ct2 {
+  position: absolute;
+  inset-inline-start: 1.4rem;
+  top: calc(5.2rem + env(safe-area-inset-top, 0px));
+  font-family: var(--f-kufi);
+  font-size: 0.8rem;
+  color: rgba(244, 239, 230, 0.6);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.stg .ct2 b {
+  color: #f8f3ea;
+  font-size: 1.5rem;
+  font-family: var(--f-bold);
+  font-weight: 400;
+}
+.stg .sc {
+  position: absolute;
+  inset-inline-start: 50%;
+  bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px));
+  translate: -50% 0;
+  width: 1px;
+  height: 2.6rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), transparent);
+  animation: scd 1.8s var(--e) infinite;
+  transition: opacity 0.4s;
+}
+@keyframes scd {
+  0% {
+    scale: 1 0;
+    transform-origin: top;
+  }
+  60% {
+    scale: 1 1;
+    transform-origin: top;
+  }
+  61% {
+    transform-origin: bottom;
+  }
+  100% {
+    scale: 1 0;
+    transform-origin: bottom;
+  }
+}
+@media (min-width: 900px) {
+  .stg .pl {
+    top: 50%;
+    inset-inline-start: auto;
+    inset-inline-end: auto;
+    left: 11%;
+    margin: 0;
+    margin-top: calc(min(60svh, 38vw) / -2);
+    width: min(60svh, 38vw);
+  }
+  .stg .gn {
+    top: 50%;
+    translate: 0 -50%;
+  }
+  .stg .gn span {
+    font-size: clamp(9rem, 26vw, 28rem);
+  }
+  .stg .tx {
+    inset-inline: auto;
+    inset-inline-start: auto;
+    right: 7%;
+    left: auto;
+    width: min(34rem, 44vw);
+    bottom: auto;
+    top: 50%;
+    margin-top: -9rem;
+  }
+  .stg .ct2 {
+    inset-inline-start: auto;
+    right: 7%;
+    top: 6.4rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stg .tx,
+  .stg .pl,
+  .stg .bgl,
+  .stg .gn span {
+    transition: none;
+  }
+  .stg .sc {
+    animation: none;
+  }
+}
+.stg h1::before,
+.stg h1::after,
+.stg h2::before,
+.stg h2::after {
+  content: none !important;
+}
+@media (max-width: 899px) {
+  .stg .tx .row {
+    padding-inline-end: 3.4rem;
+  }
+}

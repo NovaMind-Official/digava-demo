@@ -1,0 +1,180 @@
+/* یکدست‌سازی فونت و دکمه‌ها */
+
+:root {
+  --f-serif: 'Vazirmatn', sans-serif;
+  --f-ui: 'Vazirmatn', sans-serif;
+  --f-kufi: 'Vazirmatn', sans-serif;
+  --f-body: 'Vazirmatn', sans-serif;
+  --f-bold: 'Vazirmatn', sans-serif;
+}
+html:root[data-skin] {
+  --f-serif: 'Vazirmatn', sans-serif;
+  --f-ui: 'Vazirmatn', sans-serif;
+  --f-kufi: 'Vazirmatn', sans-serif;
+  --f-body: 'Vazirmatn', sans-serif;
+  --f-bold: 'Vazirmatn', sans-serif;
+}
+html * {
+  letter-spacing: normal !important;
+}
+.pp,
+.cb .pr b,
+.card .pr b,
+.tot,
+.facts dt,
+.avg b,
+.stats b,
+.mini b,
+.pn1 + .pr2 b,
+.bub span,
+.cd b,
+.combo b,
+.pts b,
+.stg .tx .pp2,
+.stg .ct2 b,
+.pk .nn b,
+.pk .ri .q,
+.pk .tot2 b,
+.dr footer .t b,
+.rsum .big,
+.rvc .av {
+  font-weight: 800 !important;
+}
+h3,
+.card h3,
+.cb h3,
+.ri b,
+.dl b,
+.bub b,
+.mid b,
+.bh b,
+.arch b,
+.feat b,
+.club b {
+  font-family: 'Vazirmatn', sans-serif !important;
+  font-weight: 800;
+  line-height: 1.5;
+}
+h1,
+.pt {
+  line-height: 1.25;
+}
+h2 {
+  line-height: 1.3;
+}
+p,
+.cb p,
+.desc2,
+.lead,
+.story,
+blockquote p,
+.about p {
+  line-height: 1.95;
+}
+.cb p {
+  font-size: 0.86rem;
+}
+h1,
+h2,
+h3,
+p,
+li,
+b,
+small,
+label,
+dd,
+dt,
+blockquote,
+.btn,
+button {
+  overflow-wrap: break-word;
+}
+.card *,
+.panel *,
+.combo *,
+.line *,
+.dl *,
+.ri * {
+  min-width: 0;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.9rem;
+  padding-inline: 1.4rem;
+  line-height: 1.4;
+  text-align: center;
+}
+.btn.sm {
+  min-height: 2.5rem;
+  padding-inline: 1.1rem;
+  font-size: 0.85rem;
+}
+.heart,
+.cmpb {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  display: grid;
+  place-items: center;
+}
+.optl {
+  min-height: 2.2rem;
+  padding: 0.2rem 0.9rem;
+}
+.top .icon {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.tabs button,
+.seg button,
+.days button,
+.slots button {
+  min-height: 2.6rem;
+}
+.meta2 span,
+.tag,
+.chip {
+  line-height: 1.6;
+}
+.step button,
+.nn button {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+}
+.foot a {
+  display: inline-block;
+  padding-block: 0.35rem;
+}
+a[href^='tel'] {
+  display: inline-block;
+  padding-block: 0.35rem;
+}
+.card [data-ci] .btn,
+.mgt .card [data-ci] .btn,
+.mini .btn {
+  min-height: 0;
+}
+.card [data-ci] .btn::before,
+.mgt .card [data-ci] .btn::before {
+  content: '';
+  font-size: 0;
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  background:
+    linear-gradient(currentColor, currentColor) center/100% 2.2px no-repeat,
+    linear-gradient(currentColor, currentColor) center/2.2px 100% no-repeat;
+}
+.mgt .card [data-ci] .btn::before {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+.card [data-ci] .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

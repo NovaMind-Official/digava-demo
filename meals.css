@@ -1,0 +1,140 @@
+/* وعده‌ی روز، غذای روز و ست‌ها */
+
+html[data-meal='morning'] {
+  --sky: #e0a21b;
+}
+html[data-meal='lunch'] {
+  --sky: #0e8f8b;
+}
+html[data-meal='evening'] {
+  --sky: #c2652d;
+}
+html[data-meal='dinner'] {
+  --sky: #1f3a6e;
+}
+html[data-meal='late'] {
+  --sky: #33275e;
+}
+.aw-in {
+  background-image:
+    var(--pat),
+    radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--sky, var(--tq)) 75%, #fff), transparent 60%),
+    linear-gradient(170deg, var(--sky, var(--tq)), #052b2c);
+}
+.chef {
+  background: linear-gradient(180deg, var(--alt), var(--paper));
+}
+.cimg {
+  justify-self: center;
+  width: min(26rem, 90%);
+  aspect-ratio: 3/4;
+  border-radius: 999px 999px 30px 30px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 6px var(--acc),
+    0 40px 70px -30px rgba(0, 0, 0, 0.6);
+}
+.cimg .ph {
+  aspect-ratio: auto;
+  height: 100%;
+}
+.story {
+  font-family: var(--f-serif);
+  font-size: 1.25rem;
+  color: var(--muted);
+}
+.cd {
+  display: flex;
+  gap: 0.6rem;
+}
+.cd span {
+  display: grid;
+  justify-items: center;
+  min-width: 5rem;
+  padding: 0.6rem;
+  border-radius: 20px;
+  background: var(--field);
+  border: 1px solid var(--mist);
+  font-family: var(--f-kufi);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.cd b {
+  font-family: var(--f-bold);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.capw {
+  display: grid;
+  gap: 0.3rem;
+  max-width: 26rem;
+}
+.capb {
+  height: 8px;
+  border-radius: 8px;
+  background: var(--mist);
+  overflow: hidden;
+}
+.capb i {
+  display: block;
+  height: 100%;
+  width: var(--w, 50%);
+  background: linear-gradient(to left, var(--acc), #d1495b);
+  transition: width 1s;
+}
+.combos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+.combo {
+  position: relative;
+  padding: 1.4rem;
+  border-radius: 30px;
+  background: var(--field);
+  border: 1px solid var(--mist);
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  overflow: hidden;
+  transition:
+    opacity 0.8s var(--d, 0ms) var(--e),
+    translate 0.8s var(--d, 0ms) var(--e),
+    transform 0.4s var(--e);
+}
+.combo::after {
+  content: '';
+  position: absolute;
+  inset-inline-end: -2.5rem;
+  top: -2.5rem;
+  width: 9rem;
+  height: 9rem;
+  background: var(--pat);
+  filter: invert(0.5);
+  opacity: 0.3;
+  border-radius: 50%;
+}
+.combo:hover {
+  transform: translateY(-6px);
+}
+.off {
+  justify-self: start;
+  padding: 0 0.9rem;
+  border-radius: 99px;
+  background: var(--acc);
+  color: var(--on);
+  font-family: var(--f-kufi);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.combo s {
+  color: var(--muted);
+}
+.combo b {
+  font-family: var(--f-bold);
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: var(--acc);
+}

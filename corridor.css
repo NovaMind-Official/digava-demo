@@ -1,0 +1,86 @@
+/* کریدور افقی بازار */
+
+.cor {
+  position: relative;
+}
+.cor-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 4.5rem;
+}
+.cor-sticky h2 {
+  padding-inline: 5vw;
+}
+.cor-track {
+  display: flex;
+  gap: 1.6rem;
+  padding-inline: 5vw;
+  width: max-content;
+  will-change: transform;
+}
+.booth {
+  flex: 0 0 min(14rem, 62vw);
+  height: min(25rem, 52vh);
+  height: min(25rem, 52svh);
+  border-radius: 999px 999px 30px 30px;
+  padding: 1.6rem 1rem;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  gap: 0.8rem;
+  color: #fff;
+  background-image: var(--pat), linear-gradient(170deg, var(--c), color-mix(in srgb, var(--c) 40%, #031819));
+  background-size:
+    64px 64px,
+    auto;
+  box-shadow:
+    inset 0 0 0 6px var(--acc),
+    inset 0 0 0 8px rgba(0, 0, 0, 0.25);
+}
+.bh {
+  display: grid;
+  text-align: center;
+}
+.bh b {
+  font-family: var(--f-disp);
+  font-size: 1.9rem;
+  line-height: 1.2;
+}
+.bh span {
+  font-family: var(--f-kufi);
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+.bi {
+  display: flex;
+}
+.bi button {
+  width: 4.4rem;
+  border: 0;
+  padding: 0;
+  background: none;
+  margin-inline-start: -1rem;
+  cursor: pointer;
+  transition: transform 0.4s var(--e);
+}
+.bi button:first-child {
+  margin: 0;
+}
+.bi button:hover {
+  transform: translateY(-8px) scale(1.1);
+  z-index: 2;
+}
+.bi .ph {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--acc);
+}

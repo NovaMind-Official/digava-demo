@@ -1,0 +1,115 @@
+/* کارت بازشونده */
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    16rem circle at var(--mx, 50%) var(--my, 0%),
+    rgba(255, 226, 150, 0.22),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover::after {
+  opacity: 1;
+}
+.mtr {
+  display: flex;
+  gap: 0.6rem;
+  font-family: var(--f-kufi);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.mtr span {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+}
+.mtr i {
+  display: block;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(to left, var(--acc) var(--w), var(--mist) var(--w));
+}
+.cx {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.cx button {
+  font-family: var(--f-ui);
+  font-size: 0.78rem;
+  border: 1px solid var(--mist);
+  border-radius: 99px;
+  background: none;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  color: var(--muted);
+  transition: background 0.25s;
+}
+.cx button:hover {
+  border-color: var(--acc);
+  color: var(--ink);
+}
+.cx button[aria-pressed='true'] {
+  background: var(--acc);
+  color: var(--on);
+  border-color: var(--acc);
+}
+.opts {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s var(--e);
+}
+.opts.open {
+  grid-template-rows: 1fr;
+}
+.opts > div {
+  overflow: hidden;
+  display: grid;
+  gap: 0.5rem;
+}
+.og {
+  display: grid;
+  gap: 0.25rem;
+  padding-block-start: 0.4rem;
+}
+.og small {
+  color: var(--muted);
+}
+.chs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.chs button {
+  font-family: var(--f-ui);
+  font-size: 0.8rem;
+  border: 1px solid var(--mist);
+  border-radius: 99px;
+  background: none;
+  color: inherit;
+  padding: 0 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.chs button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.chs i {
+  font-style: normal;
+  opacity: 0.7;
+}
+.optp {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 24px;
+  background: var(--alt);
+}

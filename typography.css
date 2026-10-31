@@ -1,0 +1,65 @@
+/* تایپوگرافی و متن بزرگ */
+
+.wrap.rev > h2:first-child {
+  font-size: clamp(2.1rem, 6vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.wrap.rev > h2:first-child::before {
+  content: '';
+  display: block;
+  height: 16px;
+  margin-bottom: 1rem;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23C98303' d='M12 0l2.6 5.3L20.5 3.5l-1.8 5.9L24 12l-5.3 2.6 1.8 5.9-5.9-1.8L12 24l-2.6-5.3-5.9 1.8 1.8-5.9L0 12l5.3-2.6-1.8-5.9 5.9 1.8z'/%3E%3C/svg%3E")
+      center/14px no-repeat,
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--mist) 12%,
+        var(--mist) calc(50% - 18px),
+        transparent calc(50% - 18px),
+        transparent calc(50% + 18px),
+        var(--mist) calc(50% + 18px),
+        var(--mist) 88%,
+        transparent
+      )
+      center/100% 1px no-repeat;
+  opacity: 0.9;
+}
+.mani {
+  padding: clamp(4rem, 12vw, 9rem) 6vw;
+  max-width: 70rem;
+  margin-inline: auto;
+  text-align: center;
+}
+.mani p {
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: clamp(2rem, 6.4vw, 4.8rem);
+  line-height: 1.35;
+  margin: 0;
+}
+.mani .w {
+  display: inline-block;
+  opacity: var(--o, 0.14);
+  transition: opacity 0.25s;
+  margin-inline: 0.12em;
+}
+.mani .w.ac {
+  font-family: var(--f-cal);
+  color: var(--acc);
+}
+.mani small {
+  display: block;
+  margin-top: 1.6rem;
+  font-family: var(--f-kufi);
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mani .w {
+    opacity: 1 !important;
+  }
+}

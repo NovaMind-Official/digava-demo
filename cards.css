@@ -1,0 +1,274 @@
+/* کارت غذا */
+
+.grid {
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: stretch;
+  padding: 0.5rem;
+  border-radius: 26px;
+  overflow: visible;
+}
+.card .cm {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.card .cm .open {
+  width: 100%;
+  display: block;
+}
+.card .ph {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  outline: 0;
+  box-shadow: none;
+  transform: none;
+}
+.card:hover .ph {
+  transform: none;
+}
+.card .ph img {
+  transition: transform 0.9s var(--e);
+}
+.card:hover .ph img {
+  transform: scale(1.08);
+}
+.card .cm::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.28), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.card .bdg {
+  position: absolute;
+  z-index: 2;
+  top: 0.55rem;
+  inset-inline-start: 0.55rem;
+  padding: 0.1rem 0.7rem;
+  border-radius: 99px;
+  background: var(--acc);
+  color: var(--on);
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.6);
+}
+.card .cm .heart,
+.card .cmpb {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(8, 18, 18, 0.55);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition:
+    transform 0.3s var(--e),
+    background 0.25s;
+}
+.card .cm .heart {
+  top: 0.5rem;
+  inset-inline-end: 0.5rem;
+}
+.card .cmpb {
+  bottom: 0.5rem;
+  inset-inline-end: 0.5rem;
+}
+.card .cm .heart:hover,
+.card .cmpb:hover {
+  transform: scale(1.12);
+}
+.card .cm .heart[aria-pressed='true'] {
+  color: #ff6b81;
+}
+.card .cmpb[aria-pressed='true'] {
+  background: var(--acc);
+  color: var(--on);
+}
+.card .cb {
+  padding: 0.75rem 0.5rem 0.45rem;
+  gap: 0.35rem;
+  flex: 1;
+  align-content: start;
+}
+.card .cb h3 {
+  font-size: 1.02rem;
+  line-height: 1.45;
+}
+.card .cb p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  -webkit-line-clamp: 1;
+}
+.card .meta2 {
+  gap: 0.35rem;
+  align-items: center;
+}
+.card .meta2 span,
+.card .optl {
+  padding: 0.05rem 0.65rem;
+  font-size: 0.74rem;
+}
+.card .optl {
+  border: 1px solid var(--mist);
+  border-radius: 99px;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.74rem;
+  cursor: pointer;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+.card .optl:hover {
+  border-color: var(--acc);
+  background: var(--alt);
+}
+.card .pr {
+  margin-block-start: auto;
+  padding-block-start: 0.55rem;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+.card .pr b {
+  display: grid;
+  font-size: 1.18rem;
+  line-height: 1.15;
+  color: var(--acc);
+}
+.card .pr b small {
+  font-size: 0.66rem;
+  color: var(--muted);
+  font-weight: 500;
+  font-family: var(--f-ui, inherit);
+}
+.card [data-ci] .btn {
+  font-size: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+.card [data-ci] .btn::before {
+  content: '+';
+  font-size: 1.7rem;
+  line-height: 0.9;
+  font-weight: 500;
+  display: block;
+}
+.card [data-ci] .step button {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+.card [data-ci] .step {
+  gap: 0.35rem;
+}
+.hs .card {
+  flex: 0 0 14.5rem;
+}
+.mgt .card {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.4rem;
+}
+.mgt .card .cm {
+  width: 4rem;
+  flex: none;
+  border-radius: 14px;
+}
+.mgt .card .ph {
+  border-radius: 14px;
+}
+.mgt .card .cb p,
+.mgt .card .meta2,
+.mgt .card .cm::after,
+.mgt .card .bdg,
+.mgt .card .cm .heart,
+.mgt .card .cmpb,
+.mgt .card .pr b small {
+  display: none;
+}
+.mgt .card .cb {
+  padding: 0;
+  gap: 0.1rem;
+}
+.mgt .card .cb h3 {
+  font-size: 0.92rem;
+}
+.mgt .card .pr {
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.mgt .card .pr b {
+  font-size: 0.95rem;
+}
+.mgt .card [data-ci] .btn {
+  width: 2rem;
+  height: 2rem;
+}
+.mgt .card [data-ci] .btn::before {
+  font-size: 1.4rem;
+}
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+  .card {
+    padding: 0.4rem;
+    border-radius: 22px;
+  }
+  .card .ph,
+  .card .cm {
+    border-radius: 17px;
+  }
+  .card .cb {
+    padding: 0.6rem 0.35rem 0.35rem;
+  }
+  .card .cb h3 {
+    font-size: 0.94rem;
+  }
+  .card .cb p {
+    font-size: 0.76rem;
+  }
+  .card .pr b {
+    font-size: 1.02rem;
+  }
+  .card .cm .heart,
+  .card .cmpb {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+  .card [data-ci] .btn {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+  .hs .card {
+    flex: 0 0 11.8rem;
+  }
+}

@@ -1,0 +1,106 @@
+/* مقایسه‌ی غذاها */
+
+.cmpbar {
+  position: fixed;
+  z-index: 36;
+  inset-inline-start: 1.2rem;
+  bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 99px;
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.55);
+  animation: minin 0.5s cubic-bezier(0.2, 1.2, 0.3, 1);
+}
+.cmpbar[hidden] {
+  display: none;
+}
+.cmpbar .ic {
+  color: var(--paper);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.ci {
+  font-size: 0.8rem;
+  padding: 0 0.7rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.14);
+}
+#cp {
+  width: min(62rem, 96vw);
+}
+.cmpt {
+  display: grid;
+  grid-template-columns: 6.5rem repeat(var(--n), minmax(0, 1fr));
+  gap: 0.4rem 0.8rem;
+  padding: 1.2rem 1.4rem 1.6rem;
+}
+.cmpt > div {
+  padding: 0.4rem 0;
+  border-block-end: 1px solid var(--mist);
+  font-size: 0.9rem;
+}
+.cmpt .ch {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  text-align: center;
+  border: 0;
+}
+.cmpt .ch .ph {
+  width: 5rem;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.cmpt .rl {
+  color: var(--muted);
+  font-family: var(--f-kufi);
+}
+#cp h3 {
+  padding: 1.2rem 1.4rem 0;
+}
+@media (max-width: 800px) {
+  .cmpbar {
+    bottom: 5.8rem;
+    inset-inline-start: 0.8rem;
+  }
+  .cloth {
+    width: 94vw;
+  }
+  .pl {
+    width: 27%;
+    margin: -13.5%;
+  }
+  .bub {
+    max-width: 10rem;
+  }
+  .mid span {
+    display: none;
+  }
+  .cor {
+    height: auto !important;
+  }
+  .cor-sticky {
+    position: static;
+    height: auto;
+    overflow: visible;
+    padding-top: 2rem;
+  }
+  .cor-track {
+    width: auto;
+    overflow-x: auto;
+    transform: none !important;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+  }
+  .booth {
+    scroll-snap-align: start;
+    flex-basis: 14rem;
+  }
+  .cd span {
+    min-width: 4rem;
+  }
+}

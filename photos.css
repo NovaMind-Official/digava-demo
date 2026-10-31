@@ -1,0 +1,174 @@
+/* مدیریت عکس‌ها */
+
+.drop {
+  border: 2px dashed var(--acc);
+  border-radius: 28px;
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+  text-align: center;
+  background: var(--alt);
+  margin-block: 1rem;
+  transition: background 0.25s;
+}
+.drop.on {
+  background: color-mix(in srgb, var(--acc) 22%, var(--alt));
+}
+.drop span {
+  color: var(--muted);
+}
+.phg {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  margin-block-start: 1rem;
+}
+.phi {
+  display: grid;
+  gap: 0.3rem;
+  justify-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 24px;
+  border: 1px solid var(--mist);
+  background: var(--field);
+  align-content: start;
+}
+.phi .ph {
+  width: 7rem;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px var(--field),
+    0 0 0 5px var(--acc);
+}
+.hp {
+  width: 7rem;
+  aspect-ratio: 3/4;
+  border-radius: 999px 999px 14px 14px;
+  overflow: hidden;
+  background: var(--alt);
+  box-shadow:
+    0 0 0 3px var(--field),
+    0 0 0 5px var(--acc);
+}
+.hp img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.phi b {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.phi .ic {
+  margin-block-start: 0.2rem;
+}
+
+.lk {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 0.75rem;
+}
+.lk a {
+  color: var(--acc);
+}
+
+#ob {
+  padding: 1.7rem;
+  text-align: center;
+}
+#ob .obx {
+  position: relative;
+}
+#ob .x {
+  position: absolute;
+  inset: -0.6rem auto auto -0.6rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--mist);
+  background: var(--alt);
+  color: var(--ink);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.obk {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  margin: 0 auto 0.8rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--on);
+  background: linear-gradient(135deg, var(--acc), #f7d27a);
+  box-shadow: 0 12px 30px -10px var(--acc);
+  animation: obp 0.7s var(--e);
+}
+@keyframes obp {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+#ob h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.3rem;
+}
+.obt {
+  white-space: pre-wrap;
+  text-align: right;
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.9;
+  background: var(--alt);
+  border: 1px dashed var(--mist);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0;
+  max-height: 38vh;
+  overflow: auto;
+  color: var(--ink);
+}
+.obg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.4rem, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 0.7rem;
+}
+.obb {
+  --c: var(--acc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 16px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: #fff;
+  background: var(--c);
+  box-shadow: 0 10px 24px -12px var(--c);
+  transition:
+    transform 0.25s var(--e),
+    filter 0.25s;
+}
+.obb:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+}
+.obb:active {
+  transform: scale(0.96);
+}
+.obcp {
+  width: 100%;
+}
+.obn {
+  font-size: 0.78rem;
+  margin-top: 0.7rem;
+}
