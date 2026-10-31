@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# پس از انتشار، آدرس واقعی سایت را جایگزین کنید
+Sitemap: https://example.ir/sitemap.xml

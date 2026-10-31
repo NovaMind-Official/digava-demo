@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>راهنمای قالب سفره‌خانه</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400..900&display=swap">
+<style>
+:root{--p:#F2F8F6;--a:#E1EEEA;--i:#0A2B2D;--m:#4C6B6A;--l:#C9DDD8;--c:#C98303;--t:#0E8F8B}
+@media(prefers-color-scheme:dark){:root{--p:#04191A;--a:#0A2829;--i:#EAF5F2;--m:#8FB1AC;--l:#16393A;--c:#F2B134;--t:#34C3BC}}
+*{box-sizing:border-box;margin:0}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:var(--p);color:var(--i);line-height:2;padding:0 0 4rem}
+.w{max-width:46rem;margin:auto;padding:0 1.2rem}
+header{padding:3.4rem 0 2rem;background:linear-gradient(160deg,var(--t),#0A2B2D);color:#fff;margin-bottom:2rem}
+header h1{font-size:clamp(1.8rem,6vw,2.8rem);font-weight:900;line-height:1.3}
+header p{opacity:.8}
+h2{font-size:1.4rem;font-weight:900;margin:2.4rem 0 .6rem;display:flex;gap:.6rem;align-items:center}
+h2 i{font-style:normal;width:2rem;height:2rem;border-radius:50%;background:var(--c);color:#1A1000;display:grid;place-items:center;font-size:.95rem}
+p,li{color:var(--m)}li{margin:.2rem 0}
+code{direction:ltr;unicode-bidi:embed;background:var(--a);border:1px solid var(--l);border-radius:8px;padding:.05rem .45rem;font-size:.86em;color:var(--i)}
+pre{direction:ltr;text-align:left;background:#071F20;color:#CFE8E3;border-radius:16px;padding:1rem 1.2rem;overflow:auto;font-size:.82rem;line-height:1.8;margin:.8rem 0}
+.n{background:var(--a);border-inline-start:4px solid var(--c);padding:.8rem 1rem;border-radius:12px;margin:1rem 0;color:var(--i)}
+table{width:100%;border-collapse:collapse;margin:.8rem 0;font-size:.92rem}td,th{border-bottom:1px solid var(--l);padding:.5rem .4rem;text-align:right}th{color:var(--i)}
+</style>
+</head>
+<body>
+<header><div class="w"><h1>راهنمای قالب سفره‌خانه</h1><p>نسخه ۳٫۰ · قالب تک‌فایل فارسی (RTL) برای رستوران، کافه، سفره‌خانه و فروشگاه محصولات سنتی</p></div></header>
+<div class="w">
+
+<h2><i>۱</i> نصب در ۳۰ ثانیه</h2>
+<p>قالب فقط HTML، CSS و جاوااسکریپت است؛ نیازی به PHP، پایگاه‌داده یا نصب ندارد.</p>
+<ol>
+<li>همه‌ی فایل‌های پوشه را روی هاست (public_html) یا GitHub Pages آپلود کنید.</li>
+<li>فایل <code>index.html</code> را باز کنید؛ سایت اجرا می‌شود.</li>
+<li>فایل <code>assets/js/config.js</code> را ویرایش کنید (بخش بعد).</li>
+</ol>
+<p class="n">برای باز کردن مستقیم فایل از روی گوشی یا کامپیوتر هم کار می‌کند، اما اینترنت لازم است چون فونت‌ها از Google Fonts بارگذاری می‌شوند (بخش «فونت» را ببینید).</p>
+
+<h2><i>◦</i> ساختار فایل‌ها</h2>
+<table>
+<tr><th>مسیر</th><th>محتوا</th></tr>
+<tr><td><code>index.html</code></td><td>ساختار صفحه و بارگذاری فایل‌ها</td></tr>
+<tr><td><code>assets/js/config.js</code></td><td>تنظیمات برند (SITE)</td></tr>
+<tr><td><code>assets/js/data.js</code></td><td>منو و محصولات</td></tr>
+<tr><td><code>assets/js/*.js</code></td><td>بخش‌های سایت: سبد، رزرو، رویدادها، پیگیری، گالری، پوسته‌ها و ...</td></tr>
+<tr><td><code>assets/css/*.css</code></td><td>استایل‌ها، هر بخش در یک فایل</td></tr>
+<tr><td><code>assets/img/dishes</code></td><td>عکس غذاها (<code>dish-01.jpg</code> و ...)</td></tr>
+</table>
+<p class="n">ترتیب بارگذاری فایل‌ها در انتهای index.html مهم است؛ جابه‌جایشان نکنید. نمونه‌ها (نظرها، تلفن، ایمیل) نمایشی‌اند و باید عوض شوند.</p>
+
+<h2><i>۲</i> تنظیمات برند (مهم‌ترین بخش)</h2>
+<p>در فایل <code>assets/js/config.js</code> شیء <code>SITE</code> را پیدا کنید. همه‌چیز آنجاست:</p>
+<table>
+<tr><th>کلید</th><th>کار</th></tr>
+<tr><td><code>name</code></td><td>نام برند؛ در تمام صفحه‌ها، عنوان و فوتر جایگزین می‌شود</td></tr>
+<tr><td><code>tagline</code> / <code>description</code></td><td>شعار فوتر و توضیح سئو</td></tr>
+<tr><td><code>address</code>، <code>phone</code>، <code>phoneLabel</code>، <code>email</code>، <code>hours</code>، <code>instagram</code></td><td>اطلاعات تماس در صفحه‌ی رزرو، تماس و فوتر</td></tr>
+<tr><td><code>mapQuery</code></td><td>متنی که دکمه‌ی «مسیریابی» در نقشه جست‌وجو می‌کند</td></tr>
+<tr><td><code>url</code></td><td>آدرس نهایی سایت (برای سئو و اشتراک‌گذاری)</td></tr>
+<tr><td><code>hero</code> / <code>heroAccent</code></td><td>تیتر صفحه‌ی اصلی و کلمه‌ی طلایی‌شده</td></tr>
+<tr><td><code>theme</code></td><td>تم پیش‌فرض: <code>sofreh</code> (سفره)، <code>noir</code> (نوآر شب)، <code>cafe</code> (کافه‌ی گرم) یا <code>street</code> (استریت)</td></tr>
+<tr><td><code>themeSwitcher</code></td><td><code>true</code> دکمه‌ی تغییر تم را برای مهمان نشان می‌دهد؛ <code>false</code> آن را پنهان می‌کند. انتخاب مهمان در مرورگرش ذخیره می‌شود</td></tr>
+<tr><td><code>manifesto</code></td><td>متن بزرگ و مفهومی صفحه‌ی اصلی که با اسکرول کلمه‌به‌کلمه روشن می‌شود؛ کلمه‌ی داخل <code>[ ]</code> طلایی می‌شود. برای حذف: <code>manifesto: ''</code></td></tr>
+<tr><td><code>reward</code></td><td>نوار انگیزشی سبد کشویی: <code>{ from: 800, text: 'ارسال رایگان' }</code> (مبلغ به هزار تومان). این نوار فقط نمایشی است و قیمت را تغییر نمی‌دهد؛ اگر نمی‌خواهید <code>reward: null</code> بگذارید و اگر فعالش می‌کنید خودتان به آن پایبند باشید</td></tr>
+<tr><td><code>colors</code></td><td>رنگ اصلی و فیروزه‌ای در حالت روشن و تیره</td></tr>
+<tr><td><code>serviceRate</code></td><td>هزینه‌ی سرویس؛ <code>0.1</code> یعنی ۱۰٪ و <code>0</code> یعنی بدون هزینه</td></tr>
+<tr><td><code>coupons</code></td><td>کدهای تخفیف: <code>{ کد: [درصد, 'توضیح'] }</code></td></tr>
+<tr><td><code>guestCheckout</code></td><td>سفارش بدون ثبت‌نام (پیش‌فرض روشن)</td></tr>
+</table>
+
+<h2><i>۳</i> دریافت سفارش، رزرو و پیام</h2>
+<p>قالب بدون سرور هم سفارش می‌گیرد: بعد از ثبت، پنجره‌ای با متن آماده‌ی سفارش باز می‌شود و مشتری آن را برای شما می‌فرستد. هر کانال را که می‌خواهید در <code>SITE.send</code> پر کنید:</p>
+<pre>send: {
+  whatsapp: '989121234567',  // با کد کشور، بدون + و صفر
+  telegram: 'my_restaurant', // نام کاربری بدون @
+  bale: 'my_restaurant',
+  eitaa: 'my_restaurant',
+  sms: '09121234567',
+  call: true
+}</pre>
+<ul>
+<li>واتساپ، پیامک و ایمیل: متن سفارش از قبل نوشته شده است.</li>
+<li>تلگرام، بله و ایتا: چت باز می‌شود و متن خودکار کپی می‌شود تا مشتری Paste کند (این پیام‌رسان‌ها پیش‌نوشتن متن را پشتیبانی نمی‌کنند).</li>
+<li>اگر سرویس ذخیره‌ی فرم دارید (مثل Formspree)، آدرسش را در <code>formEndpoint</code> بگذارید تا نسخه‌ی هر سفارش هم برایتان ثبت شود.</li>
+</ul>
+
+<h2><i>۴</i> ویرایش منو و محصولات</h2>
+<p>در همان فایل، آرایه‌ی <code>menu</code> را ببینید. هر غذا یک سطر است:</p>
+<pre>['نام', شماره‌دسته, قیمت‌به‌هزارتومان, 'توضیح کوتاه', 'برچسب', 'ایموجی', '#رنگ', 'مواد', امتیاز, تعدادنظر]</pre>
+<p>برچسب‌ها: <code>v</code> گیاهی، <code>s</code> تند، <code>l</code> سبک (می‌توانید ترکیب کنید: <code>'vl'</code>). دسته‌ها در آرایه‌ی <code>cats</code> هستند. قیمت‌ها به هزار تومان نوشته می‌شوند: <code>420</code> یعنی ۴۲۰٬۰۰۰ تومان.</p>
+
+<h2><i>۵</i> عکس‌ها</h2>
+<ul>
+<li>عکس غذاها: <code>assets/img/dishes/dish-01.jpg</code> تا <code>dish-84.jpg</code> (به ترتیب سطرهای منو). اگر فایلی نباشد، <b>تصویرسازی آماده‌ی همان آیتم</b> نمایش داده می‌شود؛ پس هیچ کارتی بدون تصویر نمی‌ماند و هر عکسی که بگذارید خودکار جایگزین می‌شود.</li><li>اگر نمی‌خواهید تصویرسازی نمایش داده شود، در <code>SITE</code> مقدار <code>illustrations: false</code> بگذارید.</li>
+<li>فهرست کامل نام فایل‌ها (شماره، نام فایل، نام غذا) در <code>assets/img/dishes/README.txt</code> آمده است.</li>
+<li>اندازه‌ی پیشنهادی: عکس مربع ۱۲۰۰×۱۲۰۰ برای همه (بشقاب در مرکز و حدود ۶۵ تا ۷۰ درصد قاب)، فرمت JPG یا WebP زیر ۲۰۰ کیلوبایت.</li>
+<li>راه ساده‌تر: صفحه‌ی «مدیریت عکس‌ها» (<code>#photos</code>) روی خود سایت.</li>
+</ul>
+
+<h2><i>۶</i> فونت</h2>
+<p>فونت‌ها (وزیرمتن، و مرکزی‌متن برای تیترهای بزرگ) از Google Fonts می‌آیند. اگر سایتتان روی سرور داخلی است و می‌خواهید بدون اینترنت خارجی کار کند، فایل‌های فونت را دانلود کنید، در <code>assets/fonts</code> بگذارید و خط‌های <code>&lt;link rel="stylesheet" href="https://fonts.googleapis.com/…"&gt;</code> بالای <code>index.html</code> را با <code>@font-face</code> جایگزین کنید.</p>
+
+<h2><i>۷</i> مهم: محدودیت‌های نسخه‌ی نمایشی</h2>
+<div class="n">
+<b>ثبت‌نام، ورود، سبد و سفارش‌ها فقط در مرورگر خود کاربر ذخیره می‌شوند (localStorage).</b> این برای نمایش و برای رستوران‌هایی که سفارش را از پیام‌رسان می‌گیرند کافی است، اما:
+<ul>
+<li>پرداخت آنلاین ندارد. برای اتصال به زرین‌پال یا بانک باید بک‌اند اضافه شود.</li>
+<li>حساب کاربری امنیت سمت سرور ندارد و برای داده‌ی حساس مناسب نیست.</li>
+<li>سفارش‌ها برای مدیر در جایی جمع نمی‌شوند؛ دریافت آن‌ها از طریق کانال‌های بخش ۳ است.</li>
+</ul>
+برای اتصال به سرور، توابع ثبت سفارش و رزرو (<code>forms.of</code> و <code>forms.rf</code>) را ویرایش کنید.
+</div>
+
+<h2><i>۸</i> سئو و سرعت</h2>
+<ul>
+<li>تگ‌های Open Graph و داده‌ی ساختاریافته‌ی Restaurant (JSON-LD) از روی <code>SITE</code> ساخته می‌شوند.</li>
+<li>فیلد <code>url</code> را حتماً پر کنید.</li>
+<li>سایت یک اپ تک‌صفحه‌ای است؛ برای سئوی قوی‌تر می‌توانید برای صفحه‌های مهم نسخه‌ی ثابت بسازید.</li>
+</ul>
+
+<h2><i>۹</i> امکانات</h2>
+<ul>
+<li>منوی ۸۴ آیتمی با فیلتر، مرتب‌سازی، مقایسه و جست‌وجوی سراسری (Ctrl+K)</li>
+<li>فروشگاه محصولات سنتی، سبد، کد تخفیف، سفارش بدون ثبت‌نام</li>
+<li>رزرو میز با انتخاب روز، ساعت و فضا</li>
+<li>باشگاه مشتریان، علاقه‌مندی‌ها، نظرها و امتیازدهی</li>
+<li>۴ تم کامل یک‌کلیکی (هرکدام با فونت، رنگ و فرم خودش، روشن/تیره)</li>
+<li>صفحه‌ی اصلی سینمایی: ۵ غذای برتر منو (بر اساس امتیاز و نظر) هنگام اسکرول نمایش داده می‌شوند؛ خودکار از روی <code>menu</code> ساخته می‌شود</li>
+<li>«چی بخورم؟» (<code>#pick</code>): با تعداد نفرات، حال‌وهوا و بودجه، سفره‌ی کامل پیشنهاد می‌دهد و یک‌جا به سبد اضافه می‌کند. این بخش بر پایه‌ی قاعده‌های ساده کار می‌کند</li>
+<li>سبد خرید کشویی با انیمیشن پرواز غذا به سبد و نوار انگیزشی</li>
+<li>گذار نرم بین صفحه‌ها و پرواز عکس غذا از کارت به صفحه‌ی جزئیات (در مرورگرهای قدیمی بدون انیمیشن کار می‌کند)</li>
+<li>دیوار نظرها به سبک استوری با نمودار امتیاز</li>
+<li><b>رزرو با نقشه‌ی سه‌بعدی:</b> مهمان سالن را می‌چرخاند و میز آزاد را انتخاب می‌کند. چیدمان میزها در آرایه‌ی <code>FPT</code> و منطقه‌ها در <code>FPZ</code> داخل <code>index.html</code> است. میزهای «رزرو شده» فعلاً نمایشی‌اند و برای واقعی شدن به سرور نیاز دارند</li>
+<li><b>مراسم و کیترینگ</b> (<code>#events</code>): بسته‌ها، خدمات اضافه و برآورد هزینه؛ بسته‌ها را در <code>SITE.events</code> تغییر دهید</li>
+<li><b>پیگیری سفارش</b> (<code>#track</code>): مراحل سفارش بر اساس زمان نمایش داده می‌شود (نمایشی). زمان‌ها در <code>SITE.trackMinutes</code>؛ برای وضعیت واقعی باید بک‌اند وصل شود</li>
+<li><b>گالری</b> (<code>#gallery</code>): عکس فضا و مراسم را به‌صورت <code>assets/img/gallery/space-1.jpg</code> و <code>event-1.jpg</code> بگذارید. فهرست رسانه‌ها را در <code>SITE.press</code> بنویسید تا نمایش داده شود</li>
+<li><b>باز شدن اپلی:</b> هنگام رفتن به هر صفحه، باز شدن غذا و باز شدن سبد، صفحه، کارت یا سبد از همان المانی که لمس شده با حرکت نرم (مثل iOS) باز می‌شود. اگر گوشی «کاهش حرکت» روشن داشته باشد، خودکار غیرفعال است</li>
+<li><b>چیدن سفره:</b> کارت‌های منو هنگام اسکرول مثل بشقاب روی میز می‌نشینند</li>
+<li>تم روشن و تیره، سازگار با موبایل، حالت کاهش حرکت</li>
+</ul>
+
+<p style="margin-top:3rem;text-align:center">برای پشتیبانی، شماره‌ی سفارش خود را همراه پیام ارسال کنید.</p>
+</div>
+</body>
+</html>
